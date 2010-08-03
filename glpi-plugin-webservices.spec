@@ -1,7 +1,7 @@
 %define plugin webservices
 %define name glpi-plugin-%{plugin}
 %define version 0.4.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: %{name}
 Version: %{version}
@@ -12,6 +12,8 @@ Group: Monitoring
 Url: https://forge.indepnet.net/projects/%{plugin}
 Source0: https://forge.indepnet.net/attachments/download/528/glpi-webservices-%{version}.tar.gz
 BuildArch: noarch
+Requires:   php-soap
+Requires:   php-xmlrpc
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
