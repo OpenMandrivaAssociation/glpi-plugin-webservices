@@ -1,37 +1,37 @@
-%define plugin webservices
-%define name glpi-plugin-%{plugin}
-%define version 1.2.0
-%define release %mkrel 1
+%if %mandriva_branch == Cooker
+%define release %mkrel 2
+%else
+%define subrel 1
+%define release %mkrel 0
+%endif
 
-Name: %{name}
-Version: %{version}
-Release: %{release}
 Summary: Web Services plugin
+Name: glpi-plugin-webservices
+Version: 1.2.0
+Release: %{release}
 License: GPL
 Group: Monitoring
-Url: https://forge.indepnet.net/projects/webservices
+URL: https://forge.indepnet.net/projects/webservices
 Source0: https://forge.indepnet.net/attachments/download/980/glpi-webservices-%{version}.tar.gz
+Requires: php-soap
+Requires: php-xmlrpc
 BuildArch: noarch
-Requires:   php-soap
-Requires:   php-xmlrpc
-BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
 This plugin provides a server for Web Services which allow an external
 application to check and control GLPI.
 
 %prep
-%setup -q -n %{plugin}
+
+%setup -q -n webservices
+
+find . -type f | xargs chmod 644
+find . -type d | xargs chmod 755
 
 %install
-rm -rf %{buildroot}
 
-install -d -m 755 %{buildroot}%{_datadir}/glpi/plugins/%{plugin}
-cp -ap * %{buildroot}%{_datadir}/glpi/plugins/%{plugin}
-
-%clean
-rm -rf %{buildroot}
+install -d -m 755 %{buildroot}%{_datadir}/glpi/plugins/webservices
+cp -ap * %{buildroot}%{_datadir}/glpi/plugins/webservices
 
 %files
-%defattr(-,root,root)
-%{_datadir}/glpi/plugins/%{plugin}
+%{_datadir}/glpi/plugins/webservices
