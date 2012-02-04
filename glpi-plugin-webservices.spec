@@ -1,7 +1,7 @@
 %define plugin webservices
 %define name glpi-plugin-%{plugin}
-%define version 0.4.0
-%define release %mkrel 2
+%define version 1.2.0
+%define release %mkrel 1
 
 Name: %{name}
 Version: %{version}
@@ -9,8 +9,8 @@ Release: %{release}
 Summary: Web Services plugin
 License: GPL
 Group: Monitoring
-Url: https://forge.indepnet.net/projects/%{plugin}
-Source0: https://forge.indepnet.net/attachments/download/528/glpi-webservices-%{version}.tar.gz
+Url: https://forge.indepnet.net/projects/webservices
+Source0: https://forge.indepnet.net/attachments/download/980/glpi-webservices-%{version}.tar.gz
 BuildArch: noarch
 Requires:   php-soap
 Requires:   php-xmlrpc
