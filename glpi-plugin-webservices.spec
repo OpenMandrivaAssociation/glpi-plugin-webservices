@@ -35,3 +35,23 @@ cp -ap * %{buildroot}%{_datadir}/glpi/plugins/webservices
 
 %files
 %{_datadir}/glpi/plugins/webservices
+
+
+%changelog
+* Sat Feb 04 2012 Oden Eriksson <oeriksson@mandriva.com> 1.2.0-2mdv2012.0
++ Revision: 771133
+- various fixes
+
+* Sat Feb 04 2012 Oden Eriksson <oeriksson@mandriva.com> 1.2.0-1
++ Revision: 771093
+- 1.2.0
+
+* Tue Aug 03 2010 Guillaume Rousse <guillomovitch@mandriva.org> 0.4.0-2mdv2011.0
++ Revision: 565525
+- fix dependencies
+
+* Tue Aug 03 2010 Guillaume Rousse <guillomovitch@mandriva.org> 0.4.0-1mdv2011.0
++ Revision: 565488
+- import glpi-plugin-webservices
+
+
